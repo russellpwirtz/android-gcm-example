@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="unspecified"><source path="E:\workspace\Android\android-gcm-example\GcmPushApplication\build\intermediates\exploded-aar\android-gcm-example\MyLibrary\unspecified\assets"/></dataSet><dataSet config="main"><source path="E:\workspace\Android\android-gcm-example\GcmPushApplication\src\main\assets"/></dataSet><dataSet config="debug"><source path="E:\workspace\Android\android-gcm-example\GcmPushApplication\src\debug\assets"/></dataSet></merger>

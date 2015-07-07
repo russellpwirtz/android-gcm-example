@@ -1,0 +1,1 @@
+int layout activity_library 0x7f020000

@@ -1,0 +1,3 @@
+int id my_text_view 0x7f030000
+int layout activity_library 0x7f020000
+int layout activity_main 0x7f020001
