@@ -1,0 +1,18 @@
+# Gradle
+.gradle/
+
+# IntelliJ
+.idea/
+
+# Build folders
+GcmPushApplication/build/
+MyLibrary/build/
+
+# Android specific
+local.properties
+
+android-gcm-example.iml
+GcmPushApplication/GcmPushApplication.iml
+MyLibrary/MyLibrary.iml
+
+build

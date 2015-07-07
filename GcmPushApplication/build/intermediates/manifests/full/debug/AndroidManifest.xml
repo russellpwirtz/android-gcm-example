@@ -13,7 +13,7 @@
         <!-- The launcher activity -->
         <activity
             android:name="com.russellpwirtz.gcmpush.MainActivity"
-            android:label="Hello Android Studio" >
+            android:label="Gcm Push App" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

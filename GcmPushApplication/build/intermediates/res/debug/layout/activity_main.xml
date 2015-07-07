@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Android Studio" />
+        android:text="Gcm Push App" />
 
     <!-- The text is set from the activity. -->
     <TextView
