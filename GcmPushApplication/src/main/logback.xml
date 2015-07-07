@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="LOGBACK" class="ch.qos.logback.classic.android.LogcatAppender">
+        <encoder>
+            <pattern> \t|\t%-10.-10logger{0}.%-10.-10method [%-10.-10thread] \t%msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="LOGBACK" />
+    </root>
+</configuration>
+
+
+

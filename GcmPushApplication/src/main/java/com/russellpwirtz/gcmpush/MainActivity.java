@@ -1,25 +1,53 @@
 package com.russellpwirtz.gcmpush;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.iid.InstanceID;
 import com.russellpwirtz.library.LibraryActivity;
 import com.russellpwirtz.library.LibraryUtil;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 /**
  * Main activity for our sample application.
  */
 public class MainActivity extends Activity {
 
+    private static Logger LOGGER = LoggerFactory.getLogger(MainActivity.class);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LOGGER.error("onCreate!");
+
         setTextUsingLibraryMethod((TextView) findViewById(R.id.my_text_view));
+
+//        new AsyncTask<String, String, String>() {
+//            @Override
+//            protected String doInBackground(String... strings) {
+//                InstanceID instanceID = InstanceID.getInstance(MainActivity.this);
+//                String token = null;
+//                try {
+//                    token = instanceID.getToken(strings[0], GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+//                } catch (IOException e) {
+//                    LOGGER.error("Couldn't get token using string: " + R.string.gcm_defaultSenderId);
+//                }
+//
+//                LOGGER.error("Got token! " + token);
+//                return token;
+//            }
+//        }.execute("");
     }
 
     private void setTextUsingLibraryMethod(TextView textView) {
