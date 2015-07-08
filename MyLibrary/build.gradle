@@ -12,7 +12,7 @@ apply plugin: 'com.google.gms.google-services'
 
 dependencies {
     // Using sfl4j allows us to replace different loggers later, if desired
-    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.5'
 }
 
 android {

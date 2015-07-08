@@ -13,9 +13,9 @@ apply plugin: 'com.google.gms.google-services'
 dependencies {
     compile project(':MyLibrary')
     compile 'com.google.android.gms:play-services-gcm:7.5.0'
-    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
-    compile group: 'ch.qos.logback', name:'logback-classic', version: '1.0.13'
-    compile group: 'ch.qos.logback', name:'logback-core', version: '1.0.13'
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.5'
+    compile group: 'com.github.tony19', name:'logback-android-classic', version: '1.0.7-1'
+    compile group: 'com.github.tony19', name:'logback-android-core', version: '1.0.7-1'
 }
 
 android {
