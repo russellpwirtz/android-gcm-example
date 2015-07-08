@@ -10,8 +10,8 @@ public class PushGcmListenerService extends GcmListenerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(PushGcmListenerService.class);
 
     @Override
-    public void onMessageReceived(String from, Bundle data) {
-        LOGGER.error("Received message! "+ from);
-        super.onMessageReceived(from, data);
+    public void onMessageReceived(String senderId, Bundle data) {
+        LOGGER.error("Received message! "+ senderId + ", " + data);
+        super.onMessageReceived(senderId, data);
     }
 }
