@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <configuration>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -13,6 +15,9 @@
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="LOGBACK" />
     </root>
+
+    <logger name="com.russellpwirtz.gcmpush" level="TRACE"/>
+
 </configuration>
 
 

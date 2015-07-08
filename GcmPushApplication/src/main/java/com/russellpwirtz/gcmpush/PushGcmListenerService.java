@@ -11,7 +11,10 @@ public class PushGcmListenerService extends GcmListenerService {
 
     @Override
     public void onMessageReceived(String senderId, Bundle data) {
-        LOGGER.error("Received message! "+ senderId + ", " + data);
+        if (LOGGER.isTraceEnabled()) {
+            LOGGER.trace("Received GCM message! {}, data: {}", senderId, data);
+        }
+
         super.onMessageReceived(senderId, data);
     }
 }

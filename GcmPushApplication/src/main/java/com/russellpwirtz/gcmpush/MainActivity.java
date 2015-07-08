@@ -24,30 +24,34 @@ public class MainActivity extends Activity {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MainActivity.class);
 
+    private static String sourceId = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        LOGGER.error("onCreate!");
-
         setTextUsingLibraryMethod((TextView) findViewById(R.id.my_text_view));
 
-//        new AsyncTask<String, String, String>() {
-//            @Override
-//            protected String doInBackground(String... strings) {
-//                InstanceID instanceID = InstanceID.getInstance(MainActivity.this);
-//                String token = null;
-//                try {
-//                    token = instanceID.getToken(strings[0], GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
-//                } catch (IOException e) {
-//                    LOGGER.error("Couldn't get token using string: " + R.string.gcm_defaultSenderId);
-//                }
-//
-//                LOGGER.error("Got token! " + token);
-//                return token;
-//            }
-//        }.execute("");
+        new AsyncTask<String, String, String>() {
+            @Override
+            protected String doInBackground(String... strings) {
+                InstanceID instanceID = InstanceID.getInstance(MainActivity.this);
+                String sourceId = strings[0];
+
+                String token = null;
+                try {
+                    token = instanceID.getToken(strings[0], GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+                } catch (IOException e) {
+                    LOGGER.error("Couldn't get token using sourceId: " + sourceId);
+                }
+
+                if (LOGGER.isTraceEnabled()) {
+                    LOGGER.trace("Got GCM token: {} using sourceId: {}", token, sourceId);
+                }
+
+                return token;
+            }
+        }.execute(sourceId == null ? getString(R.string.gcm_defaultSenderId) : sourceId);
     }
 
     private void setTextUsingLibraryMethod(TextView textView) {
